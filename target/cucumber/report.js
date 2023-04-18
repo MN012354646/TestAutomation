@@ -1,4 +1,4 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("login1.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("HomePage.feature");
 formatter.feature({
   "line": 1,
   "name": "Title of your feature",
@@ -7,7 +7,13 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.scenario({
-  "line": 5,
+  "comments": [
+    {
+      "line": 4,
+      "value": "# Labels verified with data file"
+    }
+  ],
+  "line": 6,
   "name": "Verify home page label",
   "description": "",
   "id": "title-of-your-feature;verify-home-page-label",
@@ -15,18 +21,18 @@ formatter.scenario({
   "keyword": "Scenario",
   "tags": [
     {
-      "line": 4,
+      "line": 5,
       "name": "@test"
     }
   ]
 });
 formatter.step({
-  "line": 6,
+  "line": 7,
   "name": "member is on home page",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 7,
+  "line": 8,
   "name": "home page label verification",
   "keyword": "Then "
 });
@@ -34,162 +40,91 @@ formatter.match({
   "location": "CommenSteps.login()"
 });
 formatter.result({
-  "duration": 12547810109,
+  "duration": 11397335545,
   "status": "passed"
 });
 formatter.match({
   "location": "HomePageSteps.labels()"
 });
 formatter.result({
-  "duration": 6484536833,
+  "duration": 3752600301,
   "status": "passed"
 });
-formatter.scenarioOutline({
-  "line": 10,
-  "name": "Registration flow",
-  "description": "",
-  "id": "title-of-your-feature;registration-flow",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 9,
-      "name": "@test"
-    }
-  ]
-});
-formatter.step({
-  "line": 11,
-  "name": "member is on home page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 12,
-  "name": "navigated to \"home page\" page successfully",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "click on \"Sign in securely\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "click on \"Create your Amazon account\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "enter \"\u003cName\u003e\" into \"customer_name\" textbox",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "enter \"\u003cPhoneNo\u003e\" into \"phone_number\" textbox",
-  "keyword": "And "
-});
-formatter.examples({
+formatter.scenario({
   "comments": [
     {
-      "line": 17,
-      "value": "#And navigated to \"home page\" page successfully"
-    },
-    {
-      "line": 18,
-      "value": "#\t  And click on \"Sign in securely\" button"
-    },
-    {
-      "line": 19,
-      "value": "#\t  And click on \"Create your Amazon account\" button"
-    },
-    {
-      "line": 20,
-      "value": "#And click on \"Create a free business account\" link"
-    },
-    {
-      "line": 21,
-      "value": "#"
+      "line": 10,
+      "value": "# Labels verified in UI"
     }
   ],
-  "line": 22,
-  "name": "",
+  "line": 12,
+  "name": "Verifiy List of Users",
   "description": "",
-  "id": "title-of-your-feature;registration-flow;",
-  "rows": [
-    {
-      "cells": [
-        "Name",
-        "PhoneNo"
-      ],
-      "line": 23,
-      "id": "title-of-your-feature;registration-flow;;1"
-    },
-    {
-      "cells": [
-        "xyz",
-        "9866754432"
-      ],
-      "line": 24,
-      "id": "title-of-your-feature;registration-flow;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.scenario({
-  "line": 24,
-  "name": "Registration flow",
-  "description": "",
-  "id": "title-of-your-feature;registration-flow;;2",
+  "id": "title-of-your-feature;verifiy-list-of-users",
   "type": "scenario",
-  "keyword": "Scenario Outline",
+  "keyword": "Scenario",
   "tags": [
     {
-      "line": 9,
+      "line": 11,
       "name": "@test"
     }
   ]
 });
 formatter.step({
-  "line": 11,
+  "line": 13,
   "name": "member is on home page",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 12,
+  "line": 14,
   "name": "navigated to \"home page\" page successfully",
   "keyword": "And "
 });
 formatter.step({
-  "line": 13,
-  "name": "click on \"Sign in securely\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "click on \"Create your Amazon account\" button",
-  "keyword": "And "
-});
-formatter.step({
   "line": 15,
-  "name": "enter \"xyz\" into \"customer_name\" textbox",
-  "matchedColumns": [
-    0
-  ],
+  "name": "click on \"List users\" link",
   "keyword": "And "
 });
 formatter.step({
   "line": 16,
-  "name": "enter \"9866754432\" into \"phone_number\" textbox",
-  "matchedColumns": [
-    1
-  ],
+  "name": "\"/api/users?page\u003d2\" is verified sucessfully",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "click on \"Single user\" link",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "\"/api/users/2\" is verified sucessfully",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "click on \"Single user not found\" link",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "\"/api/users/23\" is verified sucessfully",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "click on \"List \u003cresource\u003e\" link",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "\"/api/unknown\" is verified sucessfully",
   "keyword": "And "
 });
 formatter.match({
   "location": "CommenSteps.login()"
 });
 formatter.result({
-  "duration": 25259809093,
+  "duration": 11390707489,
   "status": "passed"
 });
 formatter.match({
@@ -202,67 +137,111 @@ formatter.match({
   "location": "CommenSteps.homePage(String)"
 });
 formatter.result({
-  "duration": 10291607,
+  "duration": 5544883,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "\"Sign in securely\"",
+      "val": "\"List users\"",
       "offset": 9
     }
   ],
-  "location": "CommenSteps.clickButton(String)"
+  "location": "CommenSteps.clickLink(String)"
 });
 formatter.result({
-  "duration": 6819075272,
+  "duration": 217374250,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "\"Create your Amazon account\"",
+      "val": "\"/api/users?page\u003d2\"",
+      "offset": 0
+    }
+  ],
+  "location": "CommenSteps.labels(String)"
+});
+formatter.result({
+  "duration": 164558212,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "\"Single user\"",
       "offset": 9
     }
   ],
-  "location": "CommenSteps.clickButton(String)"
+  "location": "CommenSteps.clickLink(String)"
 });
 formatter.result({
-  "duration": 2381436921,
+  "duration": 240794800,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "\"xyz\"",
-      "offset": 6
-    },
-    {
-      "val": "\"customer_name\"",
-      "offset": 17
+      "val": "\"/api/users/2\"",
+      "offset": 0
     }
   ],
-  "location": "CommenSteps.enterText(String,String)"
+  "location": "CommenSteps.labels(String)"
 });
 formatter.result({
-  "duration": 244742902,
+  "duration": 84962464,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "\"9866754432\"",
-      "offset": 6
-    },
-    {
-      "val": "\"phone_number\"",
-      "offset": 24
+      "val": "\"Single user not found\"",
+      "offset": 9
     }
   ],
-  "location": "CommenSteps.enterText(String,String)"
+  "location": "CommenSteps.clickLink(String)"
 });
 formatter.result({
-  "duration": 459971568,
+  "duration": 146073852,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "\"/api/users/23\"",
+      "offset": 0
+    }
+  ],
+  "location": "CommenSteps.labels(String)"
+});
+formatter.result({
+  "duration": 102044183,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "\"List \u003cresource\u003e\"",
+      "offset": 9
+    }
+  ],
+  "location": "CommenSteps.clickLink(String)"
+});
+formatter.result({
+  "duration": 5749208060,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "\"/api/unknown\"",
+      "offset": 0
+    }
+  ],
+  "location": "CommenSteps.labels(String)"
+});
+formatter.result({
+  "duration": 171589859,
   "status": "passed"
 });
 });

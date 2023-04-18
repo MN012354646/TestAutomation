@@ -15,7 +15,7 @@ public class DataFile {
      List<String> list = new  ArrayList<String>();
      List<List<String>> listValue = new  ArrayList<List<String>>();
 	public List<String> dataFile() throws IOException  {
-			FileInputStream fis = new FileInputStream("C:\\Users\\Manoj\\eclipse-workspace\\mavenproject\\DataFile\\File.xlsx");
+			FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\DataFile\\data.xlsx");
 			workbook = new XSSFWorkbook(fis);
 			XSSFSheet sheet = workbook.getSheetAt(0);
 			for (Row row : sheet) {
@@ -27,7 +27,7 @@ public class DataFile {
 					list.add(values(cell));
  				 }
 				}
-			
+			fis.close();
 			return list;
 			}
 			

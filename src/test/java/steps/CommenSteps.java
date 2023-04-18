@@ -35,5 +35,15 @@ public class CommenSteps {
 	@And("(.*) text is displayed on the page")
     public void isTextDisplayed(String text) {
  		 
-    }		
+    }	
+	@And("(.*) is verified sucessfully")
+    public void labels(String label) throws IOException {
+		actions.homePageLabelsVerifications(label);
+	
+	}
+	@And("(.*) response is verified sucessfully")
+    public void responce(String label) throws IOException {
+		actions.homePageLabelsVerifications(label);
+	
+	}
 }

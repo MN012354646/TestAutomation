@@ -16,8 +16,11 @@ public class HomePageSteps {
 	@And("home page label verification")
     public void labels() throws IOException {
 		list=file.dataFile();
+		String text;
 		for(int i=1; i<list.size();i++) {
-		    System.out.println(homePage.homePageLabelsVerifications(list.get(i)));
+			text = list.get(i);
+		    System.out.println(homePage.homePageLabelsVerifications(text));
 		}
+		list.clear();
     }
 }

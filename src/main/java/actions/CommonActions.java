@@ -14,4 +14,7 @@ public class CommonActions {
  	public void setText(String text, String value) throws IOException {  
  		actions.setTextByTextContains(value, text);
  	 }
+ 	public Boolean homePageLabelsVerifications(String text) throws IOException {  
+ 		return actions.isDisplaytByTextContains(text);
+ 	 }
 }
